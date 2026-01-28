@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LatexApp from "../components/latex/LatexApp.svelte";
+---
+<BaseLayout title="LaTeX Builder">
+  <div class="mx-auto max-w-6xl p-4 md:p-6">
+    <LatexApp client:load />
+  </div>
+</BaseLayout>

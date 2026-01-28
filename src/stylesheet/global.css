@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@plugin "daisyui";
+/* Tight-crop display equations */
+.katex-display {
+  margin: 0 !important;
+}
+
+/* (optional) if you see extra vertical spacing inside display math */
+.katex-display > .base {
+  margin: 0 !important;
+}

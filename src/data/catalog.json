@@ -1,0 +1,12 @@
+{
+  "categories": [
+    {
+      "id": "templates",
+      "title": "Templates",
+      "description": "Fast building blocks (best for beginners)",
+      "keys": [
+        { "id": "frac", "title": "Fraction", "latex": "\\\\frac{⟂}{}", "preview": "\\\\frac{a}{b}", "tags": ["fraction","divide","frac"] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+vibe coded Latex Equations
