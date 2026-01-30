@@ -26,7 +26,29 @@ function persisted<T>(key: string, initial: T) {
 // existing
 export const latex = writable("");
 export const latexTrimmed = derived(latex, ($l) => $l.trim());
-export const exportTextColor = persisted<string>("latex:exportTextColor", "#111827");
+
+// Preview (visual only)
+export const previewTextColor = persisted<string>(
+  "latex:previewTextColor",
+  "#000000"
+);
+
+export const previewBg = persisted<"auto" | "light" | "dark">(
+  "latex:previewBg",
+  "auto"
+);
+
+// Export (authoritative)
+export const exportTextColor = persisted<string>(
+  "latex:exportTextColor",
+  "#000000"
+);
+
+export const exportBg = persisted<"transparent" | "light" | "dark">(
+  "latex:exportBg",
+  "transparent"
+);
+
 
 // NEW export settings
 export type ExportFormat = "png" | "svg" | "jpeg";

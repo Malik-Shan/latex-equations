@@ -15,6 +15,7 @@
     "daisyui": "^5.5.14",
     "html-to-image": "^1.11.13",
     "katex": "^0.16.28",
+    "mathjax": "^4.1.0",
     "svelte": "^5.48.5",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"

@@ -99,7 +99,7 @@
       {#each CATEGORIES as c}
         <button
           type="button"
-          class={`tab ${active === c.id ? "tab-active" : ""}`}
+          class={`tab ${active === c.id ? "tab-active bg-sky-300 rounded-md text-slate-900" : ""}`}
           on:click={() => changeTab(c.id)}
         >
           {c.title}
@@ -126,7 +126,7 @@
     <div class="text-sm opacity-70">Filtering…</div>
   {/if}
 
-  <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+  <div class="flex flex-wrap gap-2">
     {#each visibleKeys as row (row.k.id)}
       <button
         type="button"
