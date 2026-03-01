@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Shape } from "../../lib/shapes/types"
-  import { generateWavePath } from "../../lib/shapes/wave"
+  import { generateWavePath, getStrokeDash } from "../../lib/shapes/wave"
   import { generateArcPath } from "../../lib/shapes/arc"
   import { generateWaveLines } from "../../lib/shapes/waveLine"
 
@@ -25,10 +25,13 @@
               d={generateWavePath(shape)}
               stroke={shape.color}
               stroke-width={shape.strokeWidth}
+              stroke-dasharray={getStrokeDash(shape.strokeType)}
+              stroke-linecap={shape.strokeType === "dotted" ? "round" : "butt"}
               fill="none"
             />
           </g>
         {/if}
+        
 
         {#if shape.type === "arc"}
           <path

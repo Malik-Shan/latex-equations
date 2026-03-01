@@ -11,7 +11,10 @@ export type WaveShape = BaseShape & {
   wavelength: number
   loops: number
   strokeWidth: number
+  inverse: boolean
+  strokeType: "solid" | "dashed" | "dotted"
 }
+
 
 export type ArcShape = BaseShape & {
   type: "arc"
@@ -44,6 +47,8 @@ export const createWave = (): WaveShape => ({
   wavelength: 160,
   loops: 4,
   strokeWidth: 4,
+  inverse: false,
+  strokeType: "solid",
   color: "#3b82f6"
 })
 

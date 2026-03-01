@@ -60,6 +60,31 @@
         <!-- ================= WAVE ================= -->
         {#if shape.type === "wave"}
 
+        <label class="label cursor-pointer">
+          <span>Inverse</span>
+          <input
+            type="checkbox"
+            class="toggle"
+            checked={shape.inverse}
+            oninput={(e) =>
+              updateShape(shape, "inverse", e.currentTarget.checked)}
+          />
+        </label>
+
+        <div>
+          <label class="label">Stroke Type</label>
+          <select
+            class="select select-bordered w-full"
+            value={shape.strokeType}
+            oninput={(e) =>
+              updateShape(shape, "strokeType", e.currentTarget.value)}
+          >
+            <option value="solid">Solid</option>
+            <option value="dashed">Dashed</option>
+            <option value="dotted">Dotted</option>
+          </select>
+        </div>
+
           <!-- Color -->
           <div>
             <label class="label">Color</label>
