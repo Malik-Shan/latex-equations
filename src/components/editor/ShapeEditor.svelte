@@ -3,6 +3,7 @@
     createWave,
     createArc,
     createWaveLines,
+    createRadialWave,
     type Shape
   } from "../../lib/shapes/types"
 
@@ -24,6 +25,7 @@
   function addWave() { shapes = [...shapes, createWave()] }
   function addArc() { shapes = [...shapes, createArc()] }
   function addWaveLines() { shapes = [...shapes, createWaveLines()] }
+  function addRadialWave() {shapes = [...shapes, createRadialWave()]}
 </script>
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
@@ -32,6 +34,9 @@
       <button class="btn btn-sm" onclick={addWave}>Wave</button>
       <button class="btn btn-sm" onclick={addArc}>Arc</button>
       <button class="btn btn-sm" onclick={addWaveLines}>Wave Lines</button>
+      <button class="btn btn-sm" onclick={addRadialWave}>
+        Radial
+      </button>
     </div>
 
     <ControlsPanel

@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Shape } from "../../lib/shapes/types"
+  import { generateRadialWavePath, getStrokeDash as radialStrokeDash} from "../../lib/shapes/radialwave";
   import { generateWavePath, getStrokeDash } from "../../lib/shapes/wave"
   import { generateArcPath } from "../../lib/shapes/arc"
   import { generateWaveLines } from "../../lib/shapes/waveLine"
@@ -31,6 +32,17 @@
             />
           </g>
         {/if}
+
+        {#if shape.type === "radialWave"}
+        <path
+          d={generateRadialWavePath(shape)}
+          stroke={shape.filled ? "none" : shape.color}
+          fill={shape.filled ? shape.color : "none"}
+          stroke-width={shape.strokeWidth}
+          stroke-dasharray={radialStrokeDash(shape.strokeType)}
+          stroke-linecap={shape.strokeType === "dotted" ? "round" : "butt"}
+        />
+      {/if}
         
 
         {#if shape.type === "arc"}

@@ -15,6 +15,17 @@ export type WaveShape = BaseShape & {
   strokeType: "solid" | "dashed" | "dotted"
 }
 
+export type RadialWaveShape = BaseShape & {
+  type: "radialWave"
+  radius: number
+  amplitude: number
+  frequency: number   // number of edges
+  curviness: number   // rounding control
+  rotation: number
+  strokeWidth: number
+  strokeType: "solid" | "dashed" | "dotted"
+  filled: boolean
+}
 
 export type ArcShape = BaseShape & {
   type: "arc"
@@ -36,7 +47,11 @@ export type WaveLinesShape = BaseShape & {
   thickness: number
 }
 
-export type Shape = WaveShape | ArcShape | WaveLinesShape
+export type Shape =
+  | WaveShape
+  | ArcShape
+  | WaveLinesShape
+  | RadialWaveShape
 
 export const createWave = (): WaveShape => ({
   id: crypto.randomUUID(),
@@ -78,4 +93,20 @@ export const createWaveLines = (): WaveLinesShape => ({
   lineHeight: 120,
   thickness: 3,
   color: "#0ea5e9"
+})
+
+export const createRadialWave = (): RadialWaveShape => ({
+  id: crypto.randomUUID(),
+  type: "radialWave",
+  x: 0,
+  y: 0,
+  radius: 120,
+  amplitude: 40,
+  frequency: 3,
+  curviness: 1,
+  rotation: 0,
+  strokeWidth: 3,
+  strokeType: "solid",
+  filled: false,
+  color: "#000000"
 })

@@ -56,6 +56,161 @@
             />
           </div>
         </div>
+        <!-- ================= Radial Wave ================= -->
+         {#if shape.type === "radialWave"}
+
+            <!-- Color -->
+            <div>
+              <label class="label">Color</label>
+              <input
+                type="color"
+                class="w-full h-10"
+                value={shape.color}
+                oninput={(e) =>
+                  updateShape(shape, "color", e.currentTarget.value)}
+              />
+            </div>
+
+            <!-- Radius -->
+            <div>
+              <label class="label">Radius</label>
+              <div class="flex gap-2">
+                <input type="range" min="20" max="400"
+                  class="range flex-1"
+                  value={shape.radius}
+                  oninput={(e) =>
+                    updateShape(shape, "radius", +e.currentTarget.value)}
+                />
+                <input type="number"
+                  class="input input-bordered w-24"
+                  value={shape.radius}
+                  oninput={(e) =>
+                    updateShape(shape, "radius", +e.currentTarget.value)}
+                />
+              </div>
+            </div>
+
+            <!-- Amplitude -->
+            <div>
+              <label class="label">Amplitude</label>
+              <div class="flex gap-2">
+                <input type="range" min="0" max="200"
+                  class="range flex-1"
+                  value={shape.amplitude}
+                  oninput={(e) =>
+                    updateShape(shape, "amplitude", +e.currentTarget.value)}
+                />
+                <input type="number"
+                  class="input input-bordered w-24"
+                  value={shape.amplitude}
+                  oninput={(e) =>
+                    updateShape(shape, "amplitude", +e.currentTarget.value)}
+                />
+              </div>
+            </div>
+
+            <!-- Frequency (Edges) -->
+            <div>
+              <label class="label">Edges (n)</label>
+              <div class="flex gap-2">
+                <input type="range" min="2" max="20"
+                  class="range flex-1"
+                  value={shape.frequency}
+                  oninput={(e) =>
+                    updateShape(shape, "frequency", +e.currentTarget.value)}
+                />
+                <input type="number"
+                  class="input input-bordered w-20"
+                  value={shape.frequency}
+                  oninput={(e) =>
+                    updateShape(shape, "frequency", +e.currentTarget.value)}
+                />
+              </div>
+            </div>
+
+            <!-- Curviness -->
+            <div>
+              <label class="label">Curviness</label>
+              <div class="flex gap-2">
+                <input type="range" min="0.5" max="6" step="0.1"
+                  class="range flex-1"
+                  value={shape.curviness}
+                  oninput={(e) =>
+                    updateShape(shape, "curviness", +e.currentTarget.value)}
+                />
+                <input type="number" step="0.1"
+                  class="input input-bordered w-20"
+                  value={shape.curviness}
+                  oninput={(e) =>
+                    updateShape(shape, "curviness", +e.currentTarget.value)}
+                />
+              </div>
+            </div>
+
+            <!-- Rotation -->
+            <div>
+              <label class="label">Rotation</label>
+              <div class="flex gap-2">
+                <input type="range" min="0" max="360"
+                  class="range flex-1"
+                  value={shape.rotation}
+                  oninput={(e) =>
+                    updateShape(shape, "rotation", +e.currentTarget.value)}
+                />
+                <input type="number"
+                  class="input input-bordered w-20"
+                  value={shape.rotation}
+                  oninput={(e) =>
+                    updateShape(shape, "rotation", +e.currentTarget.value)}
+                />
+              </div>
+            </div>
+
+            <!-- Stroke -->
+            <div>
+              <label class="label">Stroke Width</label>
+              <div class="flex gap-2">
+                <input type="range" min="1" max="20"
+                  class="range flex-1"
+                  value={shape.strokeWidth}
+                  oninput={(e) =>
+                    updateShape(shape, "strokeWidth", +e.currentTarget.value)}
+                />
+                <input type="number"
+                  class="input input-bordered w-20"
+                  value={shape.strokeWidth}
+                  oninput={(e) =>
+                    updateShape(shape, "strokeWidth", +e.currentTarget.value)}
+                />
+              </div>
+            </div>
+
+            <!-- Stroke Type -->
+            <div>
+              <label class="label">Stroke Type</label>
+              <select
+                class="select select-bordered w-full"
+                value={shape.strokeType}
+                oninput={(e) =>
+                  updateShape(shape, "strokeType", e.currentTarget.value)}
+              >
+                <option value="solid">Solid</option>
+                <option value="dashed">Dashed</option>
+                <option value="dotted">Dotted</option>
+              </select>
+            </div>
+
+            <label class="label cursor-pointer">
+              <span>Filled</span>
+              <input type="checkbox"
+                class="toggle"
+                checked={shape.filled}
+                oninput={(e) =>
+                  updateShape(shape, "filled", e.currentTarget.checked)}
+              />
+            </label>
+
+          {/if}
 
         <!-- ================= WAVE ================= -->
         {#if shape.type === "wave"}
